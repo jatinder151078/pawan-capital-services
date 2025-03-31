@@ -71,9 +71,9 @@ const ContactSection = () => {
                   <div className="p-3 bg-primary/10 rounded-full">
                     <Mail className="h-6 w-6 text-primary" />
                   </div>
-                  <div>
+                  <div className="max-w-full">
                     <p className="font-medium text-gray-900 mb-1">Email</p>
-                    <a href="mailto:tallgarg152@gmail.com" className="text-primary hover:underline">
+                    <a href="mailto:tallgarg152@gmail.com" className="text-primary hover:underline break-words">
                       tallgarg152@gmail.com
                     </a>
                   </div>
