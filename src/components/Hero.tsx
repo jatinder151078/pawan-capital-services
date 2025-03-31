@@ -67,8 +67,8 @@ const Hero = () => {
             <div className="relative">
               <div className="absolute inset-0 bg-primary/10 rounded-full blur-3xl opacity-30"></div>
               <img 
-                src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" 
-                alt="Financial Consultant" 
+                src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" 
+                alt="Professional Legal Office" 
                 className="relative z-10 rounded-lg shadow-xl max-w-full h-auto object-cover"
                 style={{ maxHeight: "500px" }}
               />

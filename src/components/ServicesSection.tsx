@@ -8,7 +8,7 @@ const services = [
   {
     title: "Income Tax Return (ITR) Filing",
     icon: FileText,
-    description: "Hassle-free ITR filing with expert assistance to maximize savings.",
+    description: "Hassle-free ITR filing with expert assistance for immigration, loans, foreign compliance and more.",
     cta: "File Now",
     message: "Hello! I'm interested in Income Tax Return (ITR) Filing services.",
     color: "bg-blue-50",
@@ -17,7 +17,7 @@ const services = [
   {
     title: "Property Valuation",
     icon: Home,
-    description: "Get accurate property valuation reports for loans, sales, or disputes.",
+    description: "Get accurate property valuation reports for foreign file documents or visa purposes.",
     cta: "Request Valuation",
     message: "Hello! I'm interested in Property Valuation services.",
     color: "bg-green-50",
@@ -26,7 +26,7 @@ const services = [
   {
     title: "CA Report for Foreign Files",
     icon: FileCheck,
-    description: "Professional CA reports for immigration, loans, and foreign compliance.",
+    description: "Professional CA reports for visa applications and immigration purposes.",
     cta: "Get Report",
     message: "Hello! I'm interested in CA Report for Foreign Files services.",
     color: "bg-purple-50",
