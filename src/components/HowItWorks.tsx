@@ -2,6 +2,7 @@
 import React from "react";
 import { FileText, Send, CheckSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import WhatsAppButton from "./WhatsAppButton";
 
 const steps = [
   {
@@ -28,6 +29,11 @@ const steps = [
 ];
 
 const HowItWorks = () => {
+  const handleStartNow = () => {
+    // Scroll to contact section
+    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <section className="section-padding bg-white">
       <div className="container mx-auto">
@@ -61,7 +67,11 @@ const HowItWorks = () => {
         </div>
 
         <div className="mt-16 text-center">
-          <Button size="lg" className="bg-primary hover:bg-primary/90 px-8 py-6 h-auto text-lg">
+          <Button 
+            size="lg" 
+            className="bg-primary hover:bg-primary/90 px-8 py-6 h-auto text-lg"
+            onClick={handleStartNow}
+          >
             Start Now
           </Button>
         </div>

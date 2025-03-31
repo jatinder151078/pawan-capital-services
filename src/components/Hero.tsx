@@ -4,6 +4,19 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle } from "lucide-react";
 
 const Hero = () => {
+  const handleGetExpertAdvice = () => {
+    // Open WhatsApp with a message
+    const phoneNumber = "918054068520";
+    const message = "Hello! I'd like to get expert advice for my financial needs.";
+    const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappLink, "_blank");
+  };
+
+  const handleStartService = () => {
+    // Scroll to contact section
+    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <section className="pt-28 pb-16 md:pt-32 md:pb-20 bg-gradient-to-br from-white via-blue-50 to-blue-100">
       <div className="container mx-auto px-4 md:px-6">
@@ -22,11 +35,18 @@ const Hero = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <Button className="bg-primary hover:bg-primary/90 text-white px-6 py-6 h-auto">
+              <Button 
+                className="bg-primary hover:bg-primary/90 text-white px-6 py-6 h-auto"
+                onClick={handleGetExpertAdvice}
+              >
                 Get Expert Advice Now
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              <Button variant="outline" className="border-primary text-primary hover:bg-primary/5 px-6 py-6 h-auto">
+              <Button 
+                variant="outline" 
+                className="border-primary text-primary hover:bg-primary/5 px-6 py-6 h-auto"
+                onClick={handleStartService}
+              >
                 Start Your Service
               </Button>
             </div>

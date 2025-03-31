@@ -1,9 +1,46 @@
 
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Phone, Mail, MapPin, Send } from "lucide-react";
 
 const ContactSection = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    service: "",
+    message: ""
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Format the message for WhatsApp
+    const whatsappMessage = `
+*New Inquiry from Website*
+----------------------------
+*Name:* ${formData.name}
+*Phone:* ${formData.phone}
+*Email:* ${formData.email}
+*Service Required:* ${formData.service}
+*Message:* ${formData.message}
+----------------------------
+    `;
+    
+    // Open WhatsApp with the formatted message
+    const phoneNumber = "918054068520";
+    const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+    window.open(whatsappLink, "_blank");
+  };
+
   return (
     <section id="contact" className="section-padding bg-gray-50">
       <div className="container mx-auto">
@@ -65,7 +102,7 @@ const ContactSection = () => {
             <div className="bg-white rounded-lg shadow-sm p-8 border border-gray-100">
               <h3 className="text-2xl font-semibold mb-6 text-primary">Send Us a Message</h3>
               
-              <form className="space-y-6">
+              <form className="space-y-6" onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
@@ -75,8 +112,11 @@ const ContactSection = () => {
                       type="text"
                       id="name"
                       name="name"
+                      value={formData.name}
+                      onChange={handleChange}
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary transition"
                       placeholder="John Doe"
+                      required
                     />
                   </div>
                   <div>
@@ -87,8 +127,11 @@ const ContactSection = () => {
                       type="tel"
                       id="phone"
                       name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary transition"
                       placeholder="+91 9876543210"
+                      required
                     />
                   </div>
                 </div>
@@ -101,8 +144,11 @@ const ContactSection = () => {
                     type="email"
                     id="email"
                     name="email"
+                    value={formData.email}
+                    onChange={handleChange}
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary transition"
                     placeholder="your@email.com"
+                    required
                   />
                 </div>
                 
@@ -113,16 +159,19 @@ const ContactSection = () => {
                   <select
                     id="service"
                     name="service"
+                    value={formData.service}
+                    onChange={handleChange}
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary transition"
+                    required
                   >
                     <option value="">Select a service</option>
-                    <option value="itr">Income Tax Return Filing</option>
-                    <option value="property">Property Valuation</option>
-                    <option value="ca-report">CA Report for Foreign Files</option>
-                    <option value="msme">MSME Registration</option>
-                    <option value="health">Health Insurance</option>
-                    <option value="vehicle">Vehicle Insurance</option>
-                    <option value="other">Other Services</option>
+                    <option value="Income Tax Return Filing">Income Tax Return Filing</option>
+                    <option value="Property Valuation">Property Valuation</option>
+                    <option value="CA Report for Foreign Files">CA Report for Foreign Files</option>
+                    <option value="MSME Registration">MSME Registration</option>
+                    <option value="Health Insurance">Health Insurance</option>
+                    <option value="Vehicle Insurance">Vehicle Insurance</option>
+                    <option value="Other Services">Other Services</option>
                   </select>
                 </div>
                 
@@ -134,8 +183,11 @@ const ContactSection = () => {
                     id="message"
                     name="message"
                     rows={4}
+                    value={formData.message}
+                    onChange={handleChange}
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary transition"
                     placeholder="Tell us how we can help you..."
+                    required
                   ></textarea>
                 </div>
                 
