@@ -66,12 +66,17 @@ const Hero = () => {
           <div className="order-1 md:order-2 flex justify-center md:justify-end animate-fade-in" style={{ animationDelay: "0.4s" }}>
             <div className="relative">
               <div className="absolute inset-0 bg-primary/10 rounded-full blur-3xl opacity-30"></div>
-              <img 
-                src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" 
-                alt="Professional Legal Office" 
-                className="relative z-10 rounded-lg shadow-xl max-w-full h-auto object-cover"
-                style={{ maxHeight: "500px" }}
-              />
+              <div className="relative z-10 bg-white p-8 rounded-lg shadow-xl flex flex-col items-center">
+                <img 
+                  src="/lovable-uploads/a9319fa0-f755-45eb-94eb-56d4df240ab4.png" 
+                  alt="Pawan Capital Services Logo" 
+                  className="w-full max-w-[300px] h-auto mb-6"
+                />
+                <div className="bg-primary/5 p-4 rounded-lg w-full">
+                  <h3 className="text-xl font-semibold text-primary text-center">Your Trusted Financial Partner</h3>
+                  <p className="text-gray-700 mt-2 text-center">Professional Tax & Financial Services</p>
+                </div>
+              </div>
               <div className="absolute top-0 right-0 -mr-4 -mt-4 bg-white shadow-lg rounded-lg p-4 z-20">
                 <div className="flex items-center gap-2">
                   <div className="bg-green-100 p-2 rounded-full">
