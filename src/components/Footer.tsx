@@ -44,7 +44,6 @@ const Footer = () => {
               <li>
                 <a href="#testimonials" className="text-gray-400 hover:text-white transition-colors flex items-center gap-2">
                   <ArrowRight className="h-4 w-4" />
-                  Testimonials
                 </a>
               </li>
               <li>
